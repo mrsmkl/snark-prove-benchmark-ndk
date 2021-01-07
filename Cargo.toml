@@ -1,5 +1,5 @@
 [package]
-name = "proj"
+name = "snark-prove-benchmark-ndk"
 version = "0.1.0"
 authors = ["Sami Mäkelä <mrsmkl@gmail.com>"]
 edition = "2018"
