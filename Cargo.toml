@@ -1,0 +1,21 @@
+[package]
+name = "proj"
+version = "0.1.0"
+authors = ["Sami Mäkelä <mrsmkl@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+epoch-snark = { git = "https://github.com/celo-org/celo-bls-snark-rs" }
+rand = "0.7"
+bench-utils = { git = "https://github.com/celo-org/zexe" }
+bls-crypto = { git = "https://github.com/celo-org/celo-bls-snark-rs", default-features = false }
+
+algebra = { git = "https://github.com/celo-org/zexe", features = ["bls12_377", "bw6_761", "ed_on_bw6_761", "ed_on_bls12_377", "parallel"] }
+
+[target.'cfg(target_os="android")'.dependencies]
+jni = { version = "0.5", default-features = false }
+
+[lib]
+crate-type = ["dylib"]
